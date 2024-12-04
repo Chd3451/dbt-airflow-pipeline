@@ -5,10 +5,12 @@
             'l_linenumber'
         ])
     }} as order_item_key,
-    o_orderkey as o_orderkey,
-    o_custkey as customer_key,
-    o_orderstatus as status_code,
-    o_totalprice as total_price,
-    o_orderdate as order_date  
+    l_orderkey as order_key,
+    l_partkey as part_key,
+    l_linenumber as line_number,
+    l_quantity as quantity,
+    l_extendedprice as extended_price,
+    l_discount as discount_percentage,
+    l_tax as tax_rate  
 from 
     {{ source('tpch', 'lineitem') }} 
